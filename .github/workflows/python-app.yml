@@ -38,12 +38,14 @@ jobs:
     - name: Build Genealogy Chart
       run: python main.py
       
-    - name: Check Genealogy Chart Output
-      run:
-          if [ ! -f output/plot.html ]; then
-            echo "Genealogy chart was not generated!"
-            exit 1
-          fi
+    - name: Create output directory
+      run: mkdir -p output
+
+    - name: Generate Plot
+      run: python main.py
+
+    - name: Run Tests
+      run: pytest test_plot.py
 # ... keep the rest of your steps (lint, pytest, etc.) ...
 
 

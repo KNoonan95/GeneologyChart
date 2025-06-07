@@ -14,5 +14,5 @@ net.add_edges([(1, 2), (1, 3), (1,4) , (1,5) , (2, 3), (2, 4)])
 net.show('family_graph.html') 
 
 
-def dummy_test();
+def dummy_test():
     pass

@@ -40,7 +40,7 @@ jobs:
       
     - name: Check Genealogy Chart Output
       run:
-          if [ ! -f family_graph.html ]; then
+          if [ ! -f output/plot.html ]; then
             echo "Genealogy chart was not generated!"
             exit 1
           fi

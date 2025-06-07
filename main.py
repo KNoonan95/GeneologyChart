@@ -1,18 +1,17 @@
-from pyvis.network import Network
+import holoviews as hv
+import numpy as np
 
-net = Network()
+hv.extension('bokeh')
 
-net.add_nodes(
-    [1, 2, 3, 4, 5],
-    profile=['Father', 'Mother', 'Uncle', 'Son', 'Daughter'], 
-    title=['Father', 'Mother', 'Uncle', 'Son', 'Daughter'],
-    color=['#d47410', '#22b492', '#42adbh5', '#4a21b1', '#e627a1']  
-)
+def create_plot():
+    x = np.linspace(0, 10, 100)
+    y = np.sin(x)
+    curve = hv.Curve((x, y), 'x', 'sin(x)')
+    return curve
 
-net.add_edges([(1, 2), (1, 3), (1,4) , (1,5) , (2, 3), (2, 4)])
-
-net.show('family_graph.html') 
-
+if __name__ == "__main__":
+    plot = create_plot()
+    hv.save(plot, 'output/plot.html', backend='bokeh')
 
 def dummy_test():
     pass

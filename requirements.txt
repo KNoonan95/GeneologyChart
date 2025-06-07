@@ -1,0 +1,4 @@
+holoviews
+bokeh
+numpy
+pytest

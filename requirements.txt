@@ -2,4 +2,3 @@ holoviews
 bokeh
 numpy
 pytest
-pyviz
